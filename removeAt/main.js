@@ -1,25 +1,17 @@
 "use strict";
 console.log('shalom world')
 
-function swapPairs(arr, index){
-    let input_type = typeof(arr)
-    console.log(input_type)
-    if(input_type == 'object'){
-        for(let i=0; i<arr.length; i=i+2){
-            if(arr[i+1]){
-                let temp = arr[i]
-                arr[i] = arr[i+1]
-                arr[i+1] = temp
-            }
-        }
-        console.log('arr:', arr)
+
+function removeAt(arr, index){
+    for(let i = index; i < arr.length-1; i++){
+        arr[i] = arr[i+1]
     }
-    else{
-        console.log('input error')
-    }
+    arr.pop()
+    console.log(arr)
+    return arr
 }
 
-swapPairs([1,2,3,4,6,7])
+removeAt([1,2,3,4,6,7], 0)
 
 //Test cases:
 //[]
